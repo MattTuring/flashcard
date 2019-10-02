@@ -12,10 +12,11 @@ class Turn {
     return this.card;
   }
 
-  evaluateGuess(card) {
+  evaluateGuess(card, round) {
     if (this.guess === card.correctAnswer) {
       return true;
     } else {
+      round.incorrectGuesses.push(card.id)
       return false;
     }
   }
