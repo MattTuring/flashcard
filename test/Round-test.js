@@ -55,7 +55,7 @@ describe('Round', function() {
   });
 
   it('should calculatePercentCorrect', function() {
-    expect(round.calculatePercentCorrect()).to.equal(.50);
+    expect(round.calculatePercentCorrect()).to.equal(50);
   });
 
 
