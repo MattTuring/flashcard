@@ -16,7 +16,8 @@ class Round {
     const turn = new Turn(guess, this.deck.cards[this.turns]);
 
     if (turn.evaluateGuess() === false) {
-      this.incorrectGuesses.push(this.deck.cards[this.turns].id)
+      this.incorrectGuesses.push(this.deck.cards[this.turns]);
+      this.deck.cards.push(this.deck.cards[this.turns]);
     }
     //this could be out of order and cause problems look at later
     this.turns += 1;
@@ -29,7 +30,14 @@ class Round {
   }
 
   endRound() {
-    return `** You answered ${this.calculatePercentCorrect(this.deck)}% of the questions correctly!**`
+    if (this.calculatePercentCorrect(this.deck) < 100) {
+      console.log(`** You answered ${this.calculatePercentCorrect(this.deck)}% of the questions correctly!** TIME FOR BONUS LEARNING`)
+    } else {
+      console.log(`YOU ARE PERFECT`)
+    }
+  }
+  endRoundBonus() {
+    console.log(`You Completed The BONUS LEARNING!`)
   }
 }
 

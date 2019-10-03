@@ -36,8 +36,12 @@ async function main(round) {
   const getConfirm = await inquirer.prompt(confirmUpdate(getAnswer.answers, round));
 
     if(!round.returnCurrentCard()) {
-      console.log(round.endRound());
-    } else {
+      round.endRoundBonus();
+    } else if (round.returnCurrentCard().id === 30) {
+      round.endRound();
+      main(round);
+    }
+      else {
       main(round);
     }
 }

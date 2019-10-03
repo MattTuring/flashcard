@@ -26,6 +26,21 @@ class Game {
     this.printQuestion(round);
   }
 
+  bonusRound() {
+    var cards = [];
+
+    for (let i = 0; i < round.incorrectGuesses; i++) {
+      let card = new Card(round.incorrectGuesses[i]);
+      cards.push(card);
+    }
+
+    var deck = new Deck(cards);
+    this.currentRound += 1;
+    var round = new Round(deck);
+    this.printMessage(deck, round);
+    this.printQuestion(round);
+  }
+
   printMessage(deck, round) {
       console.log(`Welcome to FlashCards! You are playing with ${deck.countCards()} cards.
 -----------------------------------------------------------------------`)
