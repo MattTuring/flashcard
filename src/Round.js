@@ -8,7 +8,6 @@ class Round {
   }
 
   returnCurrentCard() {
-    console.log(this.deck.cards[this.turns])
     return this.deck.cards[this.turns];
   }
 

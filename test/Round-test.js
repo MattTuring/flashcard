@@ -24,7 +24,7 @@ describe('Round', function() {
   });
 
   it('should return current card', function() {
-    expect(round.returnCurrentCard()).to.equal({ id: 1,
+    expect(round.returnCurrentCard()).to.deep.include({ id: 1,
       question: 'What is Robbie\'s favorite animal',
       answers: [ 'sea otter', 'pug', 'capybara' ],
       correctAnswer: 'sea otter' });
