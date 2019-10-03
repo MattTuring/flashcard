@@ -16,8 +16,6 @@ class Game {
 
     for (let i = 0; i < prototypeQuestions.length; i++) {
       let card = new Card(prototypeQuestions[i]);
-      console.log(prototypeQuestions[i])
-      console.log(card);
       cards.push(card);
     }
 
@@ -41,11 +39,3 @@ class Game {
 }
 
 module.exports = Game;
-
-// Should keep track of the currentRound
-// start: method that starts everything
-// Creates Cards
-// Puts Cards in a Deck
-// Creates a new Round using the Deck
-// invokes printMessage to display the message in the CLI
-// invokes printQuestion to kick off our helper functions that allow interaction via the CLI

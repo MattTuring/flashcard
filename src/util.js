@@ -2,7 +2,6 @@ const inquirer = require('inquirer');
 
 const genList = (round) => {
   let card = round.returnCurrentCard();
-console.log(round.returnCurrentCard());
 
   let choices = card.answers.map((answer, index) => {
     return {
@@ -37,7 +36,7 @@ async function main(round) {
   const getConfirm = await inquirer.prompt(confirmUpdate(getAnswer.answers, round));
 
     if(!round.returnCurrentCard()) {
-      round.endRound();
+      console.log(round.endRound());
     } else {
       main(round);
     }
